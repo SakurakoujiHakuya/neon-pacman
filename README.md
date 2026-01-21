@@ -1,63 +1,60 @@
-# Neon Pacman (霓虹吃豆人)
+# 🕹️ Neon Pacman (霓虹吃豆人)
 
-[English](#english) | [中文](#chinese)
+<p align="center">
+  <a href="https://SakurakoujiHakuya.github.io/neon-pacman/">
+    <img src="https://github.com/user-attachments/assets/6881a297-5d69-40fa-a071-068dd6c5ecab" alt="Neon Pacman Gameplay" width="600">
+  </a>
+  <br>
+  <em>点击就玩 / Click image to play</em>
+</p>
+
+[English](#english) | [中文说明](#chinese)
+
+---
 
 <a name="english"></a>
 
-## English
+## 🌐 English
 
-### Introduction
+### 📝 Introduction
+**Neon Pacman** is a modern reimagining of the classic Pac-Man game. Built with **Vanilla JavaScript** and **HTML5 Canvas**, it combines retro gameplay with a sleek, neon-drenched aesthetic.
 
-Neon Pacman is a classic Pac-Man game implementation using HTML5 Canvas and Vanilla JavaScript. It features a modern neon aesthetic with glowing effects and smooth animations.
+### 🚀 Live Demo
+**Play Now:** [https://SakurakoujiHakuya.github.io/neon-pacman/](https://SakurakoujiHakuya.github.io/neon-pacman/)
 
-### Features
+### ✨ Key Features
+* **Classic Mechanics**: Authentic ghost AI, dot-eating, and maze navigation.
+* **Neon Visuals**: High-contrast glowing effects using Canvas `shadowBlur` and CSS3.
+* **Local Storage**: High scores are automatically saved to your browser.
+* **Pure Vanilla**: Zero dependencies. Lightweight and fast.
 
-- **Classic Gameplay**: Navigate Pac-Man through the maze, eat dots, and avoid ghosts.
-- **Neon Aesthetic**: A visually striking neon design with glowing walls and characters.
-- **Power Pellets**: Eat power pellets to turn the tables and eat the ghosts!
-- **Score Tracking**: High score system saved locally in your browser.
-- **Responsive Controls**: Smooth movement using arrow keys.
-
-### How to Play
-
-1.  Open `index.html` in your web browser.
-2.  Press the **START GAME** button.
-3.  Use the **Arrow Keys** (Up, Down, Left, Right) to move Pac-Man.
-4.  Eat all dots to win. Avoid ghosts unless they are blue (vulnerable).
-
-### Technologies
-
-- HTML5 Canvas
-- Vanilla JavaScript (ES6+)
-- CSS3
+### 🛠️ Tech Stack
+* **Engine**: HTML5 Canvas API
+* **Logic**: Vanilla JavaScript (ES6+)
+* **Styling**: Modern CSS3 (Flexbox, Animations)
 
 ---
 
 <a name="chinese"></a>
 
-## 中文
+## 🏮 中文说明
 
-### 简介
+### 📝 项目简介
+**Neon Pacman (霓虹吃豆人)** 是一款基于 **原生 JavaScript** 和 **HTML5 Canvas** 开发的经典游戏。它在保留原始玩法的基础上，融入了现代感十足的霓虹发光视觉效果。
 
-Neon Pacman (霓虹吃豆人) 是一个使用 HTML5 Canvas 和 原生 JavaScript 实现的经典吃豆人游戏。它采用了现代霓虹美学风格，具有发光的视觉效果和流畅的动画。
+### 🚀 在线试玩
+**点击开始游戏:** [https://SakurakoujiHakuya.github.io/neon-pacman/](https://SakurakoujiHakuya.github.io/neon-pacman/)
 
-### 特性
+### ✨ 核心特性
+* **经典还原**：完整的吃豆人逻辑，包括幽灵AI行为、能量豆状态转换等。
+* **视觉升级**：利用 Canvas 渲染引擎实现的霓虹灯发光特效，画面极具张力。
+* **持久化存储**：利用 `localStorage` 自动记录个人最高分。
+* **零依赖**：不使用任何框架，纯原生代码实现，适合作为前端学习参考。
 
-- **经典玩法**：在迷宫中控制吃豆人移动，吃掉豆子，并避开幽灵。
-- **霓虹风格**：视觉冲击力强的霓虹设计，带有发光的墙壁和角色。
-- **能量药丸**：吃掉能量药丸可以让幽灵变得脆弱，这时候你可以反过来吃掉它们！
-- **分数记录**：最高分系统会自动保存在你的浏览器本地。
-- **流畅操控**：使用键盘方向键进行流畅的移动控制。
-
-### 游戏操作
-
-1.  在浏览器中打开 `index.html` 文件。
-2.  点击 **START GAME** (开始游戏) 按钮。
-3.  使用 **方向键** (上、下、左、右) 控制吃豆人移动。
-4.  吃掉所有豆子即可获胜。注意躲避幽灵，除非它们变成蓝色（虚弱状态）。
-
-### 技术栈
-
-- HTML5 Canvas
-- 原生 JavaScript (ES6+)
-- CSS3
+### 📂 项目结构
+```text
+.
+├── index.html    # 页面结构
+├── style.css     # 霓虹视觉样式
+├── game.js      # 游戏核心逻辑 (Canvas 渲染, 碰撞检测, AI)
+└── README.md     # 项目文档
