@@ -17,6 +17,26 @@ let highScore = localStorage.getItem('pacman_highscore') || 0;
 let gameRunning = false;
 let animationId;
 let frames = 0;
+let currentDifficulty = localStorage.getItem('pacman_difficulty') || 'normal';
+
+// Difficulty configurations
+const DIFFICULTY_CONFIG = {
+    easy: {
+        pacmanSpeed: 2,
+        ghostSpeed: 1.5,
+        vulnerableTime: 800 // frames (about 13 seconds at 60fps)
+    },
+    normal: {
+        pacmanSpeed: 2,
+        ghostSpeed: 2,
+        vulnerableTime: 600 // frames (about 10 seconds at 60fps)
+    },
+    hard: {
+        pacmanSpeed: 2,
+        ghostSpeed: 2.5,
+        vulnerableTime: 400 // frames (about 6.7 seconds at 60fps)
+    }
+};
 
 // Update UI
 document.getElementById('high-score').innerText = highScore;
@@ -167,7 +187,7 @@ class Ghost {
         this.x = this.startX;
         this.y = this.startY;
         this.dir = { x: 0, y: 0 };
-        this.speed = 2;
+        this.speed = DIFFICULTY_CONFIG[currentDifficulty].ghostSpeed;
         this.vulnerable = false;
         this.vulnerableTimer = 0;
         // Initial random move
@@ -224,7 +244,7 @@ class Ghost {
 
     makeVulnerable() {
         this.vulnerable = true;
-        this.vulnerableTimer = 600; // 10 seconds at 60fps
+        this.vulnerableTimer = DIFFICULTY_CONFIG[currentDifficulty].vulnerableTime;
     }
 
     draw() {
@@ -384,6 +404,33 @@ window.addEventListener('keydown', e => {
 });
 
 document.getElementById('start-btn').addEventListener('click', startGame);
+
+// Difficulty selection
+const difficultyButtons = document.querySelectorAll('.difficulty-btn');
+difficultyButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Update active state
+        difficultyButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Set difficulty
+        currentDifficulty = btn.dataset.difficulty;
+        localStorage.setItem('pacman_difficulty', currentDifficulty);
+    });
+});
+
+// Load saved difficulty
+document.addEventListener('DOMContentLoaded', () => {
+    const savedDifficulty = localStorage.getItem('pacman_difficulty') || 'normal';
+    currentDifficulty = savedDifficulty;
+    difficultyButtons.forEach(btn => {
+        if (btn.dataset.difficulty === savedDifficulty) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+});
 
 // Initial draw
 drawMap();
