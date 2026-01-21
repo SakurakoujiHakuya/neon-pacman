@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Pacman</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ui-panel">
+            <h1>NEON PACMAN</h1>
+            <div class="score-board">
+                <span>SCORE: <span id="score">0</span></span>
+                <span>HIGH SCORE: <span id="high-score">0</span></span>
+            </div>
+        </div>
+        
+        <div id="game-wrapper">
+            <canvas id="gameCanvas" width="560" height="620"></canvas>
+            <div id="overlay" class="overlay">
+                <h2 id="overlay-title">PRESS START</h2>
+                <button id="start-btn">START GAME</button>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <p>Controls: Arrow Keys to Move</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
