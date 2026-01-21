@@ -419,18 +419,19 @@ difficultyButtons.forEach(btn => {
     });
 });
 
-// Load saved difficulty
-document.addEventListener('DOMContentLoaded', () => {
-    const savedDifficulty = localStorage.getItem('pacman_difficulty') || 'normal';
-    currentDifficulty = savedDifficulty;
+// Load saved difficulty on page load
+function loadSavedDifficulty() {
     difficultyButtons.forEach(btn => {
-        if (btn.dataset.difficulty === savedDifficulty) {
+        if (btn.dataset.difficulty === currentDifficulty) {
             btn.classList.add('active');
         } else {
             btn.classList.remove('active');
         }
     });
-});
+}
+
+// Load difficulty immediately (script is at end of body, DOM is ready)
+loadSavedDifficulty();
 
 // Initial draw
 drawMap();
